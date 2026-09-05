@@ -312,7 +312,9 @@ function shuffle(arr) {
 /* ---------------- Chapter: Cipher ---------------- */
 function initCipher() {
   const message = CONFIG.cipherMessage.toUpperCase();
-  const encoded = caesarShift(message, 7); // stored shifted by 7
+  // Shift by 13 so the reveal lands at slider position 13 — dead center of
+  // the 0-25 range, making it easy to stumble onto while dragging.
+  const encoded = caesarShift(message, 13);
   const encodedEl = document.getElementById('cipherEncoded');
   const slider = document.getElementById('cipherSlider');
   const shiftVal = document.getElementById('cipherShiftVal');

@@ -41,7 +41,7 @@ then open the printed localhost link.
 ## How the site works
 
 - **Lock screen**: she has to type the date of her birthday (`unlockDay`/`unlockMonth` in config) to get in.
-- **Chapters**: apology letter → photo memory lane → memory-match game → cipher decoder → reasons I love you flip cards → make-a-wish candle → final letter + "I forgive you" button with confetti.
+- **Chapters**: apology letter → photo memory lane → memory-match game → cipher decoder → reasons I love you flip cards → make-a-wish candle → final letter + "Please forgive me" button with confetti.
 - **Hidden hearts**: 5 tiny hearts are scattered across the chapters for her to click and find, tracked top-right.
 - Everything is plain HTML/CSS/JS — no build step, so it deploys to Netlify as-is.
 "# molly-2026-bday" 
