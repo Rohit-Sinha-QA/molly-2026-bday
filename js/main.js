@@ -126,7 +126,6 @@ function initJourney() {
   initLightbox();
   initMemoryMatch();
   initCipher();
-  initQuiz();
   initReasons();
   initWishCandle();
   initFinale();
@@ -332,39 +331,6 @@ function caesarShift(str, shift) {
     const code = ch.charCodeAt(0) - 65;
     const shifted = (code + shift + 26) % 26;
     return String.fromCharCode(shifted + 65);
-  });
-}
-
-/* ---------------- Chapter: Quiz ---------------- */
-function initQuiz() {
-  const container = document.getElementById('quizContainer');
-  CONFIG.quiz.forEach((q, qi) => {
-    const block = document.createElement('div');
-    block.className = 'quiz-question';
-    const h3 = document.createElement('h3');
-    h3.textContent = q.question;
-    block.appendChild(h3);
-
-    const optionsWrap = document.createElement('div');
-    optionsWrap.className = 'quiz-options';
-    const fact = document.createElement('p');
-    fact.className = 'quiz-fact';
-
-    q.options.forEach((opt) => {
-      const btn = document.createElement('div');
-      btn.className = 'quiz-option';
-      btn.textContent = opt;
-      btn.addEventListener('click', () => {
-        optionsWrap.querySelectorAll('.quiz-option').forEach((o) => o.classList.remove('selected'));
-        btn.classList.add('selected');
-        fact.textContent = q.funFact;
-      });
-      optionsWrap.appendChild(btn);
-    });
-
-    block.appendChild(optionsWrap);
-    block.appendChild(fact);
-    container.appendChild(block);
   });
 }
 

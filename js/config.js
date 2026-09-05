@@ -63,25 +63,6 @@ const CONFIG = {
     "Simply put — you. All of you.",
   ],
 
-  // ---------- Chapter 4: The Quiz ----------
-  quiz: [
-    {
-      question: "Where did we first meet?",
-      options: ["Fate", "A total accident", "Mutual friends", "The universe planning it"],
-      funFact: "Wherever it was — best plot twist of my life.",
-    },
-    {
-      question: "What's my favorite thing about you?",
-      options: ["Your smile", "Your mind", "Your heart", "Literally everything"],
-      funFact: "Trick question. It was always going to be 'everything.'",
-    },
-    {
-      question: "How sorry am I about September 2nd?",
-      options: ["A little", "Somewhat", "A lot", "Immeasurably, infinitely sorry"],
-      funFact: "Correct answer: the last one. Always the last one.",
-    },
-  ],
-
   // ---------- Chapter 5: Cipher message ----------
   // This gets encoded automatically — just write the plain message.
   cipherMessage: "YOU ARE THE BEST THING THAT HAS EVER HAPPENED TO ME",

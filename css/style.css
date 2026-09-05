@@ -16,7 +16,7 @@
 
 /* Reliable first-tap response on mobile (iOS Safari can otherwise eat the
    first tap on a plain div as a "hover" simulation) and no grey flash. */
-button, .match-card, .reason-card, .quiz-option, .gallery-item, .hidden-heart, #music-toggle {
+button, .match-card, .reason-card, .gallery-item, .hidden-heart, #music-toggle {
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
 }
@@ -335,31 +335,6 @@ body {
 .cipher-box input[type="range"] { width: 100%; margin-top: 1rem; accent-color: var(--rose); }
 .cipher-label { color: var(--text-dim); font-size: 0.85rem; margin-top: 0.4rem; }
 
-/* ---------- Quiz ---------- */
-#quizContainer { max-width: 560px; width: 100%; }
-.quiz-question { margin-bottom: 2.2rem; }
-.quiz-question h3 {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 600;
-  font-size: 1.4rem;
-  color: var(--text-light);
-  margin-bottom: 0.8rem;
-}
-.quiz-options { display: flex; flex-direction: column; gap: 0.6rem; }
-.quiz-option {
-  padding: 0.7rem 1rem;
-  border-radius: 10px;
-  border: 1px solid var(--card-border);
-  background: var(--card-bg);
-  color: var(--text-light);
-  cursor: pointer;
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.95rem;
-  transition: background 0.25s, border-color 0.25s;
-}
-.quiz-option:hover { border-color: var(--gold); }
-.quiz-option.selected { border-color: var(--rose); background: rgba(255,143,163,0.15); }
-.quiz-fact { color: var(--rose); font-size: 0.9rem; margin-top: 0.6rem; font-family: 'Cormorant Garamond', serif; min-height: 1.2em; }
 
 /* ---------- Reasons ---------- */
 .reasons-grid {
