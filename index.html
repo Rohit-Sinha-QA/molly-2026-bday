@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>For You</title>
+<meta name="description" content="A little mysterious world, made for you." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css?v=3" />
+</head>
+<body>
+
+<canvas id="bg-canvas"></canvas>
+
+<div id="heart-tracker" class="hidden-ui">
+  <span class="heart-tracker-icon">💗</span>
+  <span id="heart-count">0</span>/<span id="heart-total">5</span>
+</div>
+
+<button id="music-toggle" class="hidden-ui" aria-label="Toggle music">🎵</button>
+
+<nav id="progress-dots" class="hidden-ui"></nav>
+
+<!-- ===================== LOCK SCREEN ===================== -->
+<section id="lockScreen" class="screen">
+  <div class="stars-overlay"></div>
+  <div class="lock-content">
+    <p class="eyebrow">a locked memory</p>
+    <h1 class="script-title">There's something waiting for you</h1>
+    <p class="lock-copy">Before you can enter, I need to prove I finally remember what matters.</p>
+    <p class="lock-copy subtle">Enter the date that I should never have forgotten.</p>
+
+    <form id="unlockForm" class="unlock-form" autocomplete="off">
+      <input type="text" id="dayInput" maxlength="2" placeholder="DD" inputmode="numeric" />
+      <span class="slash">/</span>
+      <input type="text" id="monthInput" maxlength="2" placeholder="MM" inputmode="numeric" />
+      <button type="submit">Unlock</button>
+    </form>
+    <p id="unlockError" class="unlock-error"></p>
+    <button id="hintBtn" class="ghost-btn">need a hint?</button>
+    <p id="hintText" class="hint-text"></p>
+  </div>
+</section>
+
+<!-- ===================== MAIN JOURNEY ===================== -->
+<main id="journey" class="hidden-ui">
+
+  <!-- Intro -->
+  <section class="chapter" id="intro">
+    <p class="eyebrow">chapter zero</p>
+    <h1 class="script-title huge">for <span id="herNameSlot">you</span></h1>
+    <p class="chapter-copy">I built you a small, strange, beautiful world.</p>
+    <p class="chapter-copy">It's part apology, part love letter, part game. Take your time in it.</p>
+    <button class="cta-btn" data-scroll-next>Begin the journey ↓</button>
+  </section>
+
+  <!-- Chapter: Letter -->
+  <section class="chapter dark" id="chapter-letter">
+    <p class="eyebrow">chapter one</p>
+    <h2 class="script-title">the apology</h2>
+    <div id="letterLines" class="letter-box"></div>
+    <button class="cta-btn" data-scroll-next>Continue ↓</button>
+  </section>
+
+  <!-- Chapter: Memories -->
+  <section class="chapter" id="chapter-memories">
+    <p class="eyebrow">chapter two</p>
+    <h2 class="script-title">memory lane</h2>
+    <p class="chapter-copy">A few moments I never want to lose.</p>
+    <div id="galleryGrid" class="gallery-grid"></div>
+    <button class="cta-btn" data-scroll-next>Continue ↓</button>
+  </section>
+
+  <!-- Chapter: Memory Match Game -->
+  <section class="chapter dark" id="chapter-match">
+    <p class="eyebrow">chapter three</p>
+    <h2 class="script-title">a little game</h2>
+    <p class="chapter-copy">Find the matching pairs — for old time's sake.</p>
+    <div id="matchGrid" class="match-grid"></div>
+    <p id="matchWinMsg" class="win-msg"></p>
+    <button class="cta-btn" data-scroll-next>Continue ↓</button>
+  </section>
+
+  <!-- Chapter: Cipher -->
+  <section class="chapter" id="chapter-cipher">
+    <p class="eyebrow">chapter four</p>
+    <h2 class="script-title">a hidden message</h2>
+    <p class="chapter-copy">Turn the dial until the message becomes clear.</p>
+    <div class="cipher-box">
+      <p id="cipherEncoded" class="cipher-text"></p>
+      <input type="range" id="cipherSlider" min="0" max="25" value="0" />
+      <p class="cipher-label">shift: <span id="cipherShiftVal">0</span></p>
+    </div>
+    <button class="cta-btn" data-scroll-next>Continue ↓</button>
+  </section>
+
+  <!-- Chapter: Quiz -->
+  <section class="chapter dark" id="chapter-quiz">
+    <p class="eyebrow">chapter five</p>
+    <h2 class="script-title">a quiz about us</h2>
+    <div id="quizContainer"></div>
+    <button class="cta-btn" data-scroll-next>Continue ↓</button>
+  </section>
+
+  <!-- Chapter: Reasons -->
+  <section class="chapter" id="chapter-reasons">
+    <p class="eyebrow">chapter six</p>
+    <h2 class="script-title">reasons I love you</h2>
+    <p class="chapter-copy">Click each card.</p>
+    <div id="reasonsGrid" class="reasons-grid"></div>
+    <button class="cta-btn" data-scroll-next>Continue ↓</button>
+  </section>
+
+  <!-- Chapter: Wish -->
+  <section class="chapter dark" id="chapter-wish">
+    <p class="eyebrow">chapter seven</p>
+    <h2 class="script-title">make a wish</h2>
+    <p class="chapter-copy">Click the candle.</p>
+    <button id="candleBtn" class="candle-btn">🕯️</button>
+    <p id="wishMsg" class="win-msg"></p>
+    <button class="cta-btn" data-scroll-next>Continue ↓</button>
+  </section>
+
+  <!-- Finale -->
+  <section class="chapter finale" id="chapter-finale">
+    <p class="eyebrow">final chapter</p>
+    <h2 class="script-title">from me, to you</h2>
+    <div id="finaleImageWrap"></div>
+    <div id="finalLetterLines" class="letter-box"></div>
+    <button id="forgiveBtn" class="cta-btn forgive-btn">I forgive you 💕</button>
+    <p id="forgiveMsg" class="win-msg"></p>
+  </section>
+
+</main>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox hidden-ui">
+  <button id="lightboxClose" class="lightbox-close">&times;</button>
+  <img id="lightboxImg" src="" alt="" />
+  <p id="lightboxCaption"></p>
+</div>
+
+<audio id="bgAudio" loop></audio>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+<script src="js/config.js?v=3"></script>
+<script src="js/main.js?v=3"></script>
+</body>
+</html>

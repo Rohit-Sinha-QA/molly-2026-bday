@@ -1,0 +1,10 @@
+# Raw original phone-dump photos (unprocessed, kept locally only).
+# The site only uses the processed copies in assets/photos/.
+/IMG*.jpg
+/IMG*.jpeg
+/IMG*.png
+
+# Local test/debug artifacts
+node_modules/
+package.json
+package-lock.json
